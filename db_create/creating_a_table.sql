@@ -7,10 +7,10 @@ create table applicants (
 )
 
 /*
-ОПИСАНИЕ:
+DISCRIPTION:
 
-create table applicants (             - applicants - название таблицы (можете подставить свое, если вам нужно другое название)
-	applicant_name varchar(50),       - applicant_name - название столбца, varchar(60) тип данных в столбце applicant_name
+create table applicants (             - applicants - table's name (you can insert another name)
+	applicant_name varchar(50),       - applicant_name - column's name, varchar(60) is type of applicant_name column
 	applicant_surname varchar(50),
 	applicant_patronymic varchar(50),
 	dob date,
