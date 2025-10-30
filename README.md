@@ -4,7 +4,7 @@
 
 # Сборка laboratory_work1
 Происходит в следующем порядке:
-1. Запускаете creating_the_taples.sql
+1. Запускаете creating_the_tables.sql
 2. Запускаете add_constraints.sql
 3. Запускаете add_relationships.sql
 4. Запускаете insert_data.sql
