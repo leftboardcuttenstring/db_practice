@@ -20,37 +20,37 @@ insert into Applicants (Surname, Name, Patronymic, Status, City) values ('Romano
 insert into Statements
 select Applicant_code, Speciality_code, Status
 	from Applicants, Specialties
-	where Name='ASOIU'
+	where Specialties.Name='ASOIU'
 
 insert into Statements
 select top 5 Applicant_code, Speciality_code, Status
 	from Applicants, Specialties
-	where Name='BUAA'
+	where Specialties.Name='BUAA'
 
 insert into Statements
 select top 6 Applicant_code, Speciality_code, Status
 	from Applicants, Specialties
-	where Name='YR'
+	where Specialties.Name='YR'
 
 update Statements
 set Status='Not enrolled'
-from Statements z, Applicants a, Spetialties s
-where a.Speciality_code = z.Applicant_code and
+from Statements z, Applicants a, Specialties s
+where a.Applicant_code = z.Applicant_code and
 	  z.Speciality_code = s.Speciality_code and
 	  a.Surname = 'Sharikov' and s.Name in ('ASOIU', 'YR')
 
 insert into Exams
-select Specialty_code, Discipline_code, '17.07.2012', 20
+select Speciality_code, Discipline_code, '2012-07-17', 20
 	from Disciplines, Specialties
 	where Disciplines.Name = 'Russian'
 
 insert into Exams
-select Specialty_code, Discipline_code, '27.07.2012', 25
+select Speciality_code, Discipline_code, '2012-07-27', 25
 	from Disciplines, Specialties
 	where Disciplines.Name = 'Russian'
 
 insert into Exams
-select Specialty_code, Discipline_code, '25.07.2012', 25
+select Speciality_code, Discipline_code, '2012-07-25', 25
 	from Disciplines, Specialties
 	where Disciplines.Name = 'History'
 
