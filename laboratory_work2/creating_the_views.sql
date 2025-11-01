@@ -55,14 +55,14 @@ select appl.Applicant_surname + ' ' + substring(appl.Applicant_name, 1, 1) + '.'
 	count(*) as [Quantity of pased exams]
 from Applicants appl, Specialties spec, Exams exam, Assessments asse
 where appl.Applicant_status = 'Enrolled' and spec.Specialty_code = exam.Exam_specialty_code and asse.Assessment_applicant_code = appl.Applicant_code and asse.Assessment_exam_code = exam.Exam_code and asse.Assessment_assessment > exam.Exam_positive_score
-group by appl.Applicant_surname;
+group by appl.Applicant_surname, appl.Applicant_name, appl.Applicant_patronymic, spec.Specialty_name;
 go
 
 create view [Applicants (dormitory)] as
 select appl.Applicant_surname + ' ' + substring(appl.Applicant_name, 1, 1) + '.' + substring(appl.Applicant_patronymic, 1, 1) + '.' as 'Fullname'
 from Applicants appl
 where appl.Applicant_city != 'Khanty-Mansiysk' and appl.Applicant_status = 'Enrolled'
-group by appl.Applicant_surname;
+group by appl.Applicant_surname, appl.Applicant_name, appl.Applicant_patronymic;
 go
 
 create view [Applicants (by cities)] as
@@ -77,7 +77,7 @@ select appl.Applicant_surname + ' ' + substring(appl.Applicant_name, 1, 1) + '.'
 	sum(asse.Assessment_assessment) as [Total score]
 from Assessments as asse, Applicants as appl, Exams as exam
 where appl.Applicant_code = asse.Assessment_applicant_code and asse.Assessment_exam_code = exam.Exam_code
-group by appl.Applicant_surname;
+group by appl.Applicant_surname, appl.Applicant_name, appl.Applicant_patronymic;
 go
 
 create view [Specialties (contest)] as
