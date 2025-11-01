@@ -8,3 +8,9 @@
 2. Запускаете add_constraints.sql
 3. Запускаете add_relationships.sql
 4. Запускаете insert_data.sql
+
+# Сборка laboratory_work2
+Происходит в следующем порядке:
+0. Вам нужно иметь точный результат выполнения laboratory_work1
+1. Запускаете insert_data.sql
+2. Запускаете create_the_views.sql
