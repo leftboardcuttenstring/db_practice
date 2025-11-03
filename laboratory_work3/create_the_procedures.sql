@@ -21,31 +21,41 @@ select * from Specialties
 */
 
 create procedure Specialty_delete_proc
-	@Specialty_code int
+    @Specialty_code int
 as
 begin
-	begin tran
-	declare @Quantity_of_statements int
-	declare @Quantity_of_exams int
-	select @Quantity_of_statements = count(*) from Statements
-	where Statement_specialty_code = @Specialty_code
-	if (@Quantity_of_statements <> 0)
-	delete Statements where Statement_specialty_code = @Specialty_code
-	select @Quantity_of_exams = count(*) from Exams
-	where Exam_specialty_code = @Specialty_code
-	if (@Quantity_of_exams <> 0)
-	begin
-	delete Assessments where Assessment_exam_code in
-		(select Exam_code from Exams
-		where Exam_specialty_code = @Specialty_code)
-	delete Exams where Exam_specialty_code = @Specialty_code
-	end
-	delete Specialties where Specialty_code = @Specialty_code
-	commit tran
-end
+    if not exists (select 1 from Specialties where Specialty_code = @Specialty_code)
+    begin
+        raiserror('Error: this specialty does not exist', 16, 1);
+        return;
+    end;
+    begin try
+        begin tran;
+        delete from Statements 
+        where Statement_specialty_code = @Specialty_code;
+        delete from Assessments 
+        where Assessment_exam_code in (
+            select Exam_code 
+            from Exams 
+            where Exam_specialty_code = @Specialty_code
+        );
+
+        delete from Exams 
+        where Exam_specialty_code = @Specialty_code;
+        delete from Specialties 
+        where Specialty_code = @Specialty_code;
+        commit tran;
+    end try
+    begin catch
+        rollback tran;
+        raiserror('Error: transaction rollback due to an internal error', 16, 1);
+    end catch;
+end;
 go
 /*
 NOTE:
+that procedure didnt work 'out-of-the-box' in some way of sayin
+so, i fixed it...somehow
 
 exec Specialty_delete 14
 */
