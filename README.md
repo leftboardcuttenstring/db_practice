@@ -14,3 +14,8 @@ This happens in the following order:
 0. You need to have the exact **result of running laboratory_work1**
 1. Run **insert_data.sql**
 2. Run **create_the_views.sql**
+
+# Building laboratory_work3
+This happens in the following order:
+0. You need to have the exact **result of running laboratory_work2**
+1. Run **creating_the_procedures.sql**
