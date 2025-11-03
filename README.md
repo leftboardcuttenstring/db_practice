@@ -1,6 +1,7 @@
 # db_practice
 Due to the different encoding in Windows, I can't write comments in Russian directly in the code (this can be seen in one of the early commits, dated October 22, 2025).
 When writing the query code, I used Microsoft's SQL Server Management Studio (21.5.14), so to guarantee proper operation, it's best to use it on your PC (I just don't know how or where else I can do all this properly).
+If you encounter any errors, please email michael.a.strangewood@gmail.com. I'll try to fix the problem with the code (if it's not working).
 
 # Building laboratory_work1
 This happens in the following order:
