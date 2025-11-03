@@ -25,3 +25,8 @@ This happens in the following order:
 This happens in the following order:
 1. You need to have the exact **result of running laboratory_work3**
 2. Run **creating_the_triggers.sql**
+
+# Building laboratory_work5
+This happens in the following order:
+1. You need to have the exact **result of running laboratory_work4**
+2. Run **creating_the_functions.sql**
