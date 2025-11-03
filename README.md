@@ -11,17 +11,17 @@ This happens in the following order:
 4. Run **insert_data.sql**
 
 # Building laboratory_work2
-This happens in the following order:  
-0. You need to have the exact **result of running laboratory_work1**
-1. Run **insert_data.sql**
-2. Run **create_the_views.sql**
+This happens in the following order:
+1. You need to have the exact **result of running laboratory_work1**
+2. Run **insert_data.sql**
+3. Run **create_the_views.sql**
 
 # Building laboratory_work3
-This happens in the following order:  
-0. You need to have the exact **result of running laboratory_work2**
-1. Run **creating_the_procedures.sql**
+This happens in the following order:
+1. You need to have the exact **result of running laboratory_work2**
+2. Run **creating_the_procedures.sql**
 
 # Building laboratory_work4
-This happens in the following order:  
-0. You need to have the exact **result of running laboratory_work3**
-1. Run **creating_the_triggers.sql**
+This happens in the following order:
+1. You need to have the exact **result of running laboratory_work3**
+2. Run **creating_the_triggers.sql**
