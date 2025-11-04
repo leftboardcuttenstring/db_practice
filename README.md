@@ -34,4 +34,4 @@ This happens in the following order:
 # Building laboratory_work6
 This happens in the following order:
 1. You need to have the exact **result of running laboratory_work5**
-2. Run **creating_the_algorithms.sql**
+2. Run **creating_the_functions.sql**
