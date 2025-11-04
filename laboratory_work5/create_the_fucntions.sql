@@ -61,7 +61,11 @@ begin
 	return 0
 end
 go
-/**/
+/*
+NOTE:
+
+select dbo.Pounds_to_kilogramms_func(3.3)
+*/
 
 create function Names_info_func()
 returns int
@@ -75,7 +79,11 @@ begin
 	return 0
 end
 go
-/**/
+/*
+NOTE:
+
+select dbo.Names_info_func()
+*/
 
 create function Get_sql_server_uptime_func()
 returns varchar(100)
@@ -90,13 +98,17 @@ begin
     set @Minutes = datediff(minute, @StartDate, getdate())
     set @Hours = @Minutes / 60
     set @RemainingMinutes = @Minutes % 60
-    set @Result = 'С момента запуска SQL Server прошло ' +
-                  cast(@Hours as varchar(10)) + ' ч. ' +
-                  cast(@RemainingMinutes as varchar(10)) + ' мин.'
+    set @Result = 'Elapsed time since SQL Server started: ' +
+                  cast(@Hours as varchar(10)) + ' h. ' +
+                  cast(@RemainingMinutes as varchar(10)) + ' m.'
     return @Result
 end
 go
-/**/
+/*
+NOTE:
+
+select dbo.Get_sql_server_uptime_func()
+*/
 
 create function Is_current_year_leap_func()
 returns varchar(50)
@@ -105,13 +117,17 @@ begin
     declare @Year int = year(getdate())
     declare @Result varchar(50)
     if ((@Year % 4 = 0 and @Year % 100 <> 0) or (@Year % 400 = 0))
-        set @Result = 'Текущий год ' + cast(@Year as varchar(10)) + ' — високосный.'
+        set @Result = 'Current year ' + cast(@Year as varchar(10)) + ' — is leap.'
     else
-        set @Result = 'Текущий год ' + cast(@Year as varchar(10)) + ' — невисокосный.'
+        set @Result = 'Current year ' + cast(@Year as varchar(10)) + ' — is not leap.'
     return @Result
 end
 go
-/**/
+/*
+NOTE:
+
+select Is_current_year_leap_func()
+*/
 
 create function Sum_numbers_in_string_func(@Input varchar(200))
 returns int
@@ -140,7 +156,11 @@ begin
     return @Sum
 end
 go
-/**/
+/*
+NOTE:
+
+select Sum_numbers_in_string_func('revolution will not be televised')
+*/
 
 create function Telegram_cost_func(@Text varchar(500))
 returns varchar(100)
@@ -156,13 +176,17 @@ begin
     set @TotalKopecks = @WordCount * 33
     set @Rubles = @TotalKopecks / 100
     set @Kopecks = @TotalKopecks % 100
-    set @Result = 'Количество слов: ' + cast(@WordCount as varchar(10)) + 
-                  ', стоимость = ' + cast(@Rubles as varchar(10)) + ' руб. ' + 
-                  cast(@Kopecks as varchar(10)) + ' коп.'
+    set @Result = 'Quantity of words: ' + cast(@WordCount as varchar(10)) + 
+                  ', price = ' + cast(@Rubles as varchar(10)) + ' rub. ' + 
+                  cast(@Kopecks as varchar(10)) + ' kop.'
     return @Result
 end
 go
-/**/
+/*
+NOTE:
+
+select Sum_numbers_in_string_func('revolution will not be televised')
+*/
 
 create function Caesar_encrypt(@Text varchar(200), @Shift int)
 returns varchar(200)
@@ -186,7 +210,11 @@ begin
     return @Result
 end
 go
-/**/
+/*
+NOTE:
+
+select Sum_numbers_in_string_func('revolution will not be televised', 3)
+*/
 
 create function Personality_number(@FullName varchar(100))
 returns int
@@ -210,4 +238,8 @@ begin
     return @sum
 end
 go
-/**/
+/*
+NOTE:
+
+select Personality_number('Ivenov Ivan Ivanovich')
+*/
