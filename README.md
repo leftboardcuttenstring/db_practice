@@ -3,6 +3,8 @@ Due to the different encoding in Windows, I can't write comments in Russian dire
 When writing the query code, I used Microsoft's SQL Server Management Studio (21.5.14), so to guarantee proper operation, it's best to use it on your PC (I just don't know how or where else I can do all this properly).
 If you encounter any errors, please email michael.a.strangewood@gmail.com. I'll try to fix the problem with the code (if it's not working).
 
+To avoid being confused by the red underlines, you can click the "Edit" menu - "IntelliSense" - "Refresh local cache".
+
 ## Building laboratory_work1
 This happens in the following order:
 1. Run **creating_the_tables.sql**
