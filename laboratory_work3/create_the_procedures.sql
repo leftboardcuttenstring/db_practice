@@ -1,9 +1,10 @@
-﻿create procedure Specialty_info_insert_proc
+create procedure Specialty_info_insert_proc
 	@Specialty_name varchar(50),
 	@Quantity_of_vacancies int
 as
 	insert into Specialties values (@Specialty_name, @Quantity_of_vacancies)
 go
+
 /*
 NOTE:
 executing query (it works like - you
@@ -80,7 +81,7 @@ end
 go
 /*
 NOTE:
-The idea of ​​how to make a function for adding 
+The idea of ??how to make a function for adding 
 the discipline code (only it) hasn't occurred 
 to me yet, because this assumes that we have 
 an exam row in which the value of the Discipline_code 
@@ -102,7 +103,7 @@ as
 begin
 	if (@Applicant_surname = NULL OR @Applicant_name = NULL OR @Applicant_patronymic = NULL OR @Applicant_city = NULL)
 	begin
-		raiserror('Error: some of the data you entered is NULL. The values ​​of all fields in the applicant row cannot be NULL', 16, 1);
+		raiserror('Error: some of the data you entered is NULL. The values ??of all fields in the applicant row cannot be NULL', 16, 1);
 		return;
 	end
 	insert into Applicants (Applicant_surname, Applicant_name, Applicant_patronymic, Applicant_status, Applicant_city) 
@@ -260,4 +261,3 @@ NOTE:
 
 exec Applicant_update_status_proc 1
 */
-
