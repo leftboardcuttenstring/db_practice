@@ -17,7 +17,7 @@ below is a code what can help you execute
 that procedure (second line shows whole table to
 what you're inserting the data):
 
-exec Specialty_info_insert 'FIL (RYaL)', 25
+exec Specialty_info_insert_proc 'FIL (RYaL)', 25
 select * from Specialties
 */
 
@@ -58,7 +58,8 @@ NOTE:
 that procedure didnt work 'out-of-the-box' in some way of sayin
 so, i fixed it...somehow
 
-exec Specialty_delete 14
+exec Specialty_delete_proc 14 
+(it will work if you have 14'th bar in the Specialties table)
 */
 
 create procedure Discipline_insert_proc
@@ -81,7 +82,7 @@ end
 go
 /*
 NOTE:
-The idea of ??how to make a function for adding 
+The idea of how to make a function for adding 
 the discipline code (only it) hasn't occurred 
 to me yet, because this assumes that we have 
 an exam row in which the value of the Discipline_code 
