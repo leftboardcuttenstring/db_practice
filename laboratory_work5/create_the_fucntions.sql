@@ -31,34 +31,45 @@ begin
 end
 go
 
-create function Access_check_func(@Schema_and_table sysname, @Column sysname)
+create function Access_check_func(
+    @Schema_and_table sysname,
+    @Column sysname
+)
 returns int
 as
 begin
-	declare @Result int
-	select @Result = has_perms_by_name(@Schema_and_table, @Column, 'select')
-	if (@Result = 1)
-	begin
-		print 'You have an access'
-	end
-	else
-	begin
-		print 'You dont have an access'
-	end
-	return @Result
+    declare @Result int;
+    select @Result = has_perms_by_name(@Schema_and_table, @Column, 'select');
+    return @Result;
 end
 go
 
+/*
+
+declare @res int;
+
+select @res = dbo.Access_check_func('dbo.MyTable', 'MyColumn');
+
+if (@res = 1)
+    print 'You have access';
+else
+    print 'You don''t have access';
+
+*/
 create function Pounds_to_kilogramms_func(@Pounds float)
-returns int
+returns nvarchar(100)
 as
 begin
-	declare @grams float = @pounds * 453.6;
-	declare @kg int = floor(@grams / 1000);
-	declare @g int = round(@grams - @kg * 1000, 0);
-	print cast(@pounds as varchar(10)) + ' pounds are ' 
-	    + cast(@kg as varchar(10)) + ' kg ' + cast(@g as varchar(10)) + ' g';
-	return 0
+    declare @grams float = @pounds * 453.6;
+    declare @kg int = floor(@grams / 1000);
+    declare @g int = round(@grams - @kg * 1000, 0);
+    declare @result nvarchar(100);
+
+    set @result = cast(@pounds as nvarchar(10)) + ' pounds are ' 
+        + cast(@kg as nvarchar(10)) + ' kg ' 
+        + cast(@g as nvarchar(10)) + ' g';
+
+    return @result;
 end
 go
 /*
@@ -68,15 +79,18 @@ select dbo.Pounds_to_kilogramms_func(3.3)
 */
 
 create function Names_info_func()
-returns int
+returns nvarchar(300)
 as
 begin
-	declare @server nvarchar(100) = @@servername;
-	declare @login nvarchar(100) = suser_sname();
-	declare @user nvarchar(100) = user_name();
-	print 'You logged in ' + @server + ' as ' + @login 
-      + ' with ' + @user + ' permissions.';
-	return 0
+    declare @server nvarchar(100) = @@servername;
+    declare @login nvarchar(100) = suser_sname();
+    declare @user nvarchar(100) = user_name();
+    declare @result nvarchar(300);
+
+    set @result = 'You logged in ' + @server + ' as ' + @login 
+        + ' with ' + @user + ' permissions.';
+
+    return @result;
 end
 go
 /*
