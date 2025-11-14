@@ -51,4 +51,4 @@ The files contain several blocks of code, each with its own NOTES explanation. T
 ## Building laborator_work17(rough)
 So far, a rough solution to this lab work has been presented - I did everything manually, which by default should have been done through a graphical interface
 
-**Translated:**Пока представлена грубая форма решения этой лабраторной работы - я все делал вручную, что по умолчанию должно было делаться через графический интерфейс
+**Translated:** Пока представлена грубая форма решения этой лабраторной работы - я все делал вручную, что по умолчанию должно было делаться через графический интерфейс
