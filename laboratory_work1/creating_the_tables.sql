@@ -1,17 +1,3 @@
-/*
-Tasks:
-  0. create a database
-  1. create Disciplines table using SQL query
-  2. create Specialties table using GUI in SQL MS
-  3. create Applicants table using GUI in SQL MS
-  4. create Statements table using GUI in SQL MS
-  5. create Assessments table using GUI in SQL MS
-  6. create Journal table using GUI in SQL MS
-  7. create constraints (see in add_constraints.sql)
-  8. create relationships between tables (see in add_relationships.sql)
-  9. insert the data into tables (see in insert_data.sql)
-*/
-
 create table Disciplines (
 	Discipline_code int identity(1,1) not null primary key,
 	Discipline_name varchar(64) not null
