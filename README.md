@@ -7,10 +7,11 @@ To avoid being confused by the red underlines, you can click the "Edit" menu - "
 
 ## Building laboratory_work1
 This happens in the following order:
-1. Run **creating_the_tables.sql**
-2. Run **add_constraints.sql**
-3. Run **add_relationships.sql**
-4. Run **insert_data.sql**
+1. Run **creating_a_database.sql** from the folder **db_theory_and_notes**
+2. Run **creating_the_tables.sql**
+3. Run **add_constraints.sql**
+4. Run **add_relationships.sql**
+5. Run **insert_data.sql**
 
 ## Building laboratory_work2
 This happens in the following order:
