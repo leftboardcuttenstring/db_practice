@@ -108,7 +108,7 @@ begin
 		return;
 	end
 	insert into Applicants (Applicant_surname, Applicant_name, Applicant_patronymic, Applicant_status, Applicant_city) 
-		values (@Applicant_surname, @Applicant_name, @Applicant_patronymic, @Applicant_patronymic, @Applicant_status, @Applicant_city);
+		values (@Applicant_surname, @Applicant_name, @Applicant_patronymic, @Applicant_status, @Applicant_city);
 end
 go
 /*
