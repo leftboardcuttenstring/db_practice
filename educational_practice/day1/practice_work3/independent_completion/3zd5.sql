@@ -1,0 +1,3 @@
+SELECT Nazvanie
+FROM Strani
+WHERE Naselenie BETWEEN 10 AND 100000000 AND Ploshad <= 500000;

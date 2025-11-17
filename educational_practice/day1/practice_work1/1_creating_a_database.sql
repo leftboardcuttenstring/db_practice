@@ -1,0 +1,2 @@
+create database educational_practice;
+go
