@@ -3,41 +3,12 @@ Due to the different encoding in Windows, I can't write comments in Russian dire
 When writing the query code, I used Microsoft's SQL Server Management Studio (21.5.14), so to guarantee proper operation, it's best to use it on your PC (I just don't know how or where else I can do all this properly).
 If you encounter any errors, please email michael.a.strangewood@gmail.com. I'll try to fix the problem with the code (if it's not working).
 
-To avoid being confused by the red underlines, you can click the "Edit" menu - "IntelliSense" - "Refresh local cache".
+To avoid being confused by the red underlines, you can click the "Edit" menu - "IntelliSense" - "Refresh local cache".  
 
-## Building laboratory_work1
-This happens in the following order:
-1. Run **creating_a_database.sql** from the folder **db_theory_and_notes**
-2. Run **creating_the_tables.sql**
-3. Run **add_constraints.sql**
-4. Run **add_relationships.sql**
-5. Run **insert_data.sql**
-
-## Building laboratory_work2
-This happens in the following order:
-1. You need to have the exact **result of running laboratory_work1**
-2. Run **insert_data.sql**
-3. Run **create_the_views.sql**
-
-## Building laboratory_work3
-This happens in the following order:
-1. You need to have the exact **result of running laboratory_work2**
-2. Run **creating_the_procedures.sql**
-
-## Building laboratory_work4
-This happens in the following order:
-1. You need to have the exact **result of running laboratory_work3**
-2. Run **creating_the_triggers.sql**
-
-## Building laboratory_work5
-This happens in the following order:
-1. You need to have the exact **result of running laboratory_work4**
-2. Run **creating_the_functions.sql**
-
-## Building laboratory_work6
-This happens in the following order:
-1. You need to have the exact **result of running laboratory_work5**
-2. Run **creating_the_functions.sql**
+Building:
+1. To complete each subsequent laboratory work, the result of the previous one is required
+2. Execute all SQL queries in ascending order of the number at the beginning of the query name (from 1 to the last)
+3. If you don't see the SQL query number, please refer to the README file for build instructions.
 
 ## Building laboratory_work7
 If you want to run the queries in Lab 7, you need to carefully look at the query code: there's a 'first_query.sql' query and a 'second_query.sql' query. There, one block of SQL code corresponds to another—read the PDF of Lab 7's manual at moodle-new.chemk.org and you'll understand what I'm talking about (see next paragraph for more detailed explanation).
@@ -51,5 +22,5 @@ The files contain several blocks of code, each with its own NOTES explanation. T
 
 ## Building laborator_work17(rough)
 So far, a rough solution to this lab work has been presented - I did everything manually, which by default should have been done through a graphical interface
-
+  
 **Translated:** Пока представлена грубая форма решения этой лабраторной работы - я делал вручную то, что по умолчанию должно было делаться через графический интерфейс SSMS
