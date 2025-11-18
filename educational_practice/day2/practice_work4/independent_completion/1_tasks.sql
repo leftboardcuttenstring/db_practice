@@ -1,11 +1,11 @@
-/* first example */
+/* first task */
 select 
 	*
 	from Academicians_table
 	order by len(Academicians_table.Academicians_full_name);
 go
 
-/* second example */
+/* second task */
 select
 	replace(ltrim(rtrim(Academicians_table.Academicians_full_name)), ' ', '')
 		as Full_name, Academicians_table.Academicians_date_of_birth, 
@@ -14,7 +14,7 @@ select
 	from Academicians_table;
 go
 
-/* third example */
+/* third task */
 select 
 	Academicians_table.Academicians_full_name, 
 	charindex(N'ов', Academicians_table.Academicians_full_name) 
@@ -22,7 +22,7 @@ select
 	from Academicians_table;
 go
 
-/* fourth example */
+/* fourth task */
 select 
 	Academicians_table.Academicians_full_name, 
 	len(Academicians_table.Academicians_full_name) - len(right(Academicians_table.Academicians_full_name, 2))
@@ -30,7 +30,7 @@ select
 	from Academicians_table;
 go
 
-/* fifth example */
+/* fifth task */
 select
 	parsename(replace(Academicians_full_name, ' ', '.'), 3) 
     + ' ' 
@@ -40,7 +40,7 @@ select
 	from Academicians_table;
 go
 
-/* sixth example */
+/* sixth task */
 select distinct
 	Academicians_table.Academicians_specialization, 
 	reverse(Academicians_table.Academicians_specialization) 
@@ -48,30 +48,30 @@ select distinct
 	from Academicians_table;
 go
 
-/* seventh example */
+/* seventh task */
 select distinct 
 	replicate(N'Strangewood', year(getdate()) - 2007) 
 		as List;
 go
 
-/* eighth example */
+/* eighth task */
 select
 	round(abs((power(sin(pi() / 2.0), 2.0)) - cos((3 * pi()) / 2.0)), 2)
 		as First_func;
 go
 
-/* ninth example */
+/* ninth task */
 select 
 	datediff(day, getdate(), '20251230') 
 		as Number_of_leaved_days;
 go
-/* tenth example */
+/* tenth task */
 select 
 	datediff(month, '20071221', getdate()) 
 		as Number_of_lived_months;
 go
 
-/* eleventh example */
+/* eleventh task */
 select
     Academicians_table.Academicians_full_name,
     case
@@ -85,7 +85,7 @@ select
     from Academicians_table;
 go
 
-/* twelfth example */
+/* twelfth task */
 select distinct
     Academicians_table.Academicians_specialization,
     case
