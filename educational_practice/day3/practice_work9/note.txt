@@ -1,0 +1,1 @@
+﻿I didn't describe the theory in the comments in the SQL file. If you need help, you can always find it in the "condition.pdf" file.
