@@ -1,0 +1,1 @@
+﻿I added the query ('1_create_a_database.sql') because I wanted to move all the tables from the tenth practical into a separate database. If you don't want to create a separate database, just don't create one, lol.
