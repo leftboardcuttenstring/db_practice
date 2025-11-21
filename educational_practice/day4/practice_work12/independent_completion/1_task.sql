@@ -130,9 +130,6 @@ select dbo.Задание5(N'Африка') as Max_in_Africa;
 select dbo.Задание5(default) as Max_in_Asia;
 go
 
-
-
-/* 6 task */
 /* 6 task */
 create function Задание6
 (
@@ -157,9 +154,6 @@ begin
 		+ right(@S, @RightLen)
 end
 go
-
-
-
 
 /* 7 task */
 create function Задание7
@@ -208,8 +202,6 @@ go
 select * from dbo.Задание8(50000);
 go
 
-
-
 /* 9 task */
 create function Задание9
 (
@@ -234,8 +226,6 @@ go
 select * from dbo.Задание9(2000000, 10000000);
 go
 
-
-
 /* 10 task */
 create function Задание10()
 returns @T table
@@ -259,8 +249,6 @@ go
 select * from dbo.Задание10();
 go
 
-
-
 /* 11 task */
 create function IsPalindrom
 (
@@ -283,8 +271,6 @@ go
 select dbo.IsPalindrom(12321) as Test_Palindrome;
 go
 
-
-
 /* 12 task */
 create function Quarter
 (
@@ -304,8 +290,6 @@ go
 
 select dbo.Quarter(5, -2) as Quarter_of_point;
 go
-
-
 
 /* 13 task */
 create function IsPrime
@@ -332,8 +316,6 @@ go
 
 select dbo.IsPrime(19) as Test_prime;
 go
-
-
 
 /* 14 task */
 drop function if exists 
